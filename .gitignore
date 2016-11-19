@@ -1,0 +1,9 @@
+# C++
+linky
+*.bak
+*.o
+
+# Editors
+*.swp
+*.swo
+*~

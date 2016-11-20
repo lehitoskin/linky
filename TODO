@@ -1,0 +1,7 @@
+Generic doubly-linked list class (DList)
+	http://en.cppreference.com/w/cpp/container/list
+
+mp3 tag editor
+	id3lib - http://id3lib.sourceforge.net/
+	Grab tags from mp3
+	Write/modify tags from mp3

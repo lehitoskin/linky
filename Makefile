@@ -1,10 +1,12 @@
 CPP=g++
 
-all: main.o
-	$(CPP) -o linky src/main.o
+all: linky id3
 
-main.o: src/main.cpp
-	cd src && $(CPP) -c main.cpp
+linky: linky_main
+	$(CPP) -o linky src/linky/main.o
+
+linky_main: src/linky/main.cpp
+	cd src/linky && $(CPP) -c main.cpp
 
 id3: id3_main
 	$(CPP) -o id3 src/id3/main.o
@@ -13,4 +15,4 @@ id3_main: src/id3/main.cpp
 	cd src/id3 && $(CPP) -c main.cpp
 
 clean:
-	cd src && rm -f *.o
+	find src/ -type f -iname "*.o" -print0 | xargs -0 rm -f *.o

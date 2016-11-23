@@ -1,28 +1,26 @@
+// DList.h
+#include <iostream>
+
 class DList
 {
 public:
-void add(int value);
-DList()
-{
-head = NULL;
-}
-~DList()
-{
-}
-
-private:
-
+	void add(int value);
+	DList()
+	{
+		head = NULL;
+	}
+	~DList();
 
 protected:
-struct Node
-{
-	int value;
-	Node *next;
-	Node *prev;
-	Node(int val1, Node *next1 = NULL, Node *prev1 = NULL)
-		: value(val1), next(next1), prev(prev1)
+	struct Node
 	{
-	}
-};
-Node* head;
+		int value;
+		Node *next;
+		Node *prev;
+		Node(int val1, Node *next1 = NULL, Node *prev1 = NULL)
+			: value(val1), next(next1), prev(prev1)
+		{
+		}
+	};
+	Node* head;
 };

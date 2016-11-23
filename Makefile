@@ -1,12 +1,15 @@
 CPP=g++
 
+LINKY_CPP=main.cpp DList.cpp
+LINKY_O=src/linky/main.o src/linky/DList.o
+
 all: linky id3
 
 linky: linky_main
-	$(CPP) -o linky-bin src/linky/main.o
+	$(CPP) -o linky-bin $(LINKY_O)
 
-linky_main: src/linky/main.cpp
-	cd src/linky && $(CPP) -c main.cpp
+linky_main: src/linky/main.cpp src/linky/DList.cpp
+	cd src/linky && $(CPP) -c $(LINKY_CPP)
 
 id3: id3_main
 	$(CPP) -o id3-bin src/id3/main.o

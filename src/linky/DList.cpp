@@ -1,6 +1,5 @@
-#include "DList.h"
-
 // DList.cpp
+#include "DList.h"
 
 // add a new element to the end of the list
 void DList::add(int value)
@@ -22,5 +21,20 @@ void DList::add(int value)
 
 		// tell the new node who its prev is
 		node_ptr->next->prev = node_ptr;
+	}
+}
+
+DList::~DList()
+{
+	Node *node_ptr = head;
+
+	while (node_ptr != NULL)
+	{
+		// keep track of the node we want to delete
+		Node *garbage = node_ptr;
+		// move to the next node
+		node_ptr = node_ptr->next;
+		// delete allocated memory
+		delete garbage;
 	}
 }

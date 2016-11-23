@@ -1,8 +1,10 @@
 #include <iostream>
 
+using namespace std;
+
 int main(void)
 {
-	std::cout << "Something happened!" << std::endl;
+	cout << "Something happened!" << endl;
 
 	return 0;
 }
